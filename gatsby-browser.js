@@ -11,10 +11,10 @@ exports.shouldUpdateScroll = ({
   getSavedScrollPosition,
 }) => {
   const { pathname } = location
-  // disable scroll to top on path = "/votelog"
+  // enable scroll to top on path = "/votelog"
   if (/^\/votelog/.test(pathname)) {
-    return false
+    window.scrollTo(0, 0)
+    return true
   }
-
-  return true
+  return false
 }
